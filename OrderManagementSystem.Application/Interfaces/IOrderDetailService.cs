@@ -4,9 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using OrderManagementSystem.Domain.Models;
 namespace OrderManagementSystem.Application.Interfaces
 {
     internal interface IOrderDetailService
     {
+        List<OrderDetail> GetAllOrderDetails();
     }
 }

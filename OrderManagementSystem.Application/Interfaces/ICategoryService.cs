@@ -9,6 +9,6 @@ namespace OrderManagementSystem.Application.Interfaces
 {
     internal interface ICategoryService
     {
-        List<Order> GetAllOrders();
+      List<Category> GetAllCategories();
     }
 }
