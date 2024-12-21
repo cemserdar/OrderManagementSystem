@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace OrderManagementSystem.Application.Interfaces
 {
-    internal interface ICategoryService
+    public interface ICategoryService
     {
       List<Category> GetAllCategories();
     }

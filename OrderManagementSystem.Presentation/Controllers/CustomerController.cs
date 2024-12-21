@@ -1,12 +1,25 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using OrderManagementSystem.Application.Interfaces;
 
 namespace OrderManagementSystem.Presentation.Controllers
 {
-    public class CustomerController : Controller
+    [ApiController]
+    [Route("api/[controller]")]
+    public class CustomerController : ControllerBase
     {
-        public IActionResult Index()
+
+        private readonly ICustomerService _customerService;
+
+        public CustomerController(ICustomerService customerService)
         {
-            return View();
+            _customerService = customerService;
+        }
+        [HttpGet]
+
+        public IActionResult GetAllCustomers()
+        {
+            var customers = _customerService.GetAllCustomers();
+            return Ok(customers);
         }
     }
 }

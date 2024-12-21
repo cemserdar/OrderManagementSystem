@@ -7,7 +7,7 @@ using OrderManagementSystem.Domain.Models;
 
 namespace OrderManagementSystem.Application.Interfaces
 {
-    internal interface ICustomerService
+    public interface ICustomerService
     {
         List<Customer> GetAllCustomers();
     }

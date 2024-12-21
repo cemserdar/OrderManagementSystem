@@ -5,17 +5,22 @@ using System.Text;
 using System.Threading.Tasks;
 using OrderManagementSystem.Application.Interfaces;
 using OrderManagementSystem.Domain.Models;
+using OrderManagementSystem.Infrastructure.Repositories;
 
 namespace OrderManagementSystem.Application.Services
 {
-    internal class OrderDetailService
+    public class OrderDetailService : IOrderDetailService
     {
 
-        private readonly IOrderDetailService _orderDetailService;
+        private readonly OrderDetailRepository _repository;
 
+        public OrderDetailService(OrderDetailRepository repository)
+        {
+            this._repository = repository;
+        }
         public List<OrderDetail> GetAllOrderDetails()
         {
-            return _orderDetailService.GetAllOrderDetails();
+            return _repository.GetOrderDetails();
         }
     }
 }

@@ -1,12 +1,23 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using OrderManagementSystem.Application.Interfaces;
 
 namespace OrderManagementSystem.Presentation.Controllers
 {
-    public class CategoryController : Controller
+    [ApiController]
+    [Route("api/[controller]")]
+    public class CategoryController : ControllerBase
     {
-        public IActionResult Index()
+        private readonly ICategoryService _categoryService;
+
+        public CategoryController(ICategoryService categoryService)
         {
-            return View();
+            _categoryService = categoryService;
+        }
+        [HttpGet]
+        public IActionResult GetAllCategories()
+        {
+            var categories = _categoryService.GetAllCategories();
+            return Ok(categories);
         }
     }
 }

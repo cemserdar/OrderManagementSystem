@@ -7,7 +7,7 @@ using OrderManagementSystem.Domain.Models;
 
 namespace OrderManagementSystem.Application.Interfaces
 {
-    internal interface ISupplierService
+    public interface ISupplierService
     {
         List<Supplier> GetAllSuppliers();
     }

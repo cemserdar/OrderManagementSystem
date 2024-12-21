@@ -1,12 +1,26 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using OrderManagementSystem.Application.Interfaces;
 
 namespace OrderManagementSystem.Presentation.Controllers
 {
-    public class OrderDetailController : Controller
+    [ApiController]
+    [Route("api/[controller]")]
+    public class OrderDetailController : ControllerBase
     {
-        public IActionResult Index()
+
+        private readonly IOrderDetailService _orderDetailService;
+
+        public OrderDetailController(IOrderDetailService orderDetailService)
         {
-            return View();
+            _orderDetailService = orderDetailService;
         }
+        [HttpGet]
+        public IActionResult GetOrderDetails()
+        {
+            var orderDetails = _orderDetailService.GetAllOrderDetails();
+            return Ok(orderDetails);
+        }
+
+
     }
 }

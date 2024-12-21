@@ -7,7 +7,7 @@ using OrderManagementSystem.Domain.Models;
 
 namespace OrderManagementSystem.Application.Interfaces
 {
-    internal interface IProductService
+    public interface IProductService
     {
         List<Product> GetAllProducts();
     }

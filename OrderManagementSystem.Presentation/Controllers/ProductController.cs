@@ -1,12 +1,27 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using OrderManagementSystem.Application.Interfaces;
 
 namespace OrderManagementSystem.Presentation.Controllers
 {
+    [ApiController]
+    [Route("api/[controller]")]
     public class ProductController : Controller
     {
-        public IActionResult Index()
+        private readonly IProductService _productService;
+
+        public ProductController(IProductService productService)
         {
-            return View();
+            _productService = productService;
         }
+
+        [HttpGet]
+        public IActionResult GetProducts()
+        {
+            var products = _productService.GetAllProducts();
+            return Ok(products);
+        }
+
+
+
     }
 }
