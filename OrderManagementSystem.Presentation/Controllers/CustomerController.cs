@@ -21,5 +21,21 @@ namespace OrderManagementSystem.Presentation.Controllers
             var customers = _customerService.GetAllCustomers();
             return Ok(customers);
         }
+
+        [HttpGet]
+        [Route("{id}")]
+        public IActionResult GetCustomerById(string id)
+        {
+            var customer = _customerService.GetCustomerById(id);
+            return Ok(customer);
+        }
+        
+
+        // [HttpDelete]
+        // public IActionResult DeleteCustomer(string id)
+        // {
+        //     var customer = _customerService.DeleteCustomer(id);
+        //     return Ok(customer); 
+        // }
     }
 }

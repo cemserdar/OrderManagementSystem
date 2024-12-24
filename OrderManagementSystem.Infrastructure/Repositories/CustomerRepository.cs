@@ -21,5 +21,17 @@ namespace OrderManagementSystem.Infrastructure.Repositories
         {
             return _context.Customers.ToList();
         }
+
+        public Customer GetCustomerById(string id)
+        {
+            return _context.Customers.FirstOrDefault(c=>c.CustomerID == id);
+        }
+        
+
+        // public string DeleteCustomer(string id)
+        // {
+        //     var customer =  _context.Customers.FirstOrDefault(c=>c.CustomerID==id);
+        //     return _context.Customers.Remove(customer).ToString();
+        // }
     }
 }

@@ -19,5 +19,14 @@ namespace OrderManagementSystem.Presentation.Controllers
             var categories = _categoryService.GetAllCategories();
             return Ok(categories);
         }
+
+        [HttpGet]
+        [Route("{id}")]
+        public IActionResult GetCategoryById(int id)
+        {
+            var category = _categoryService.GetCategoryById(id);
+            return Ok(category);
+        }
+        
     }
 }

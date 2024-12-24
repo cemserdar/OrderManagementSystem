@@ -22,7 +22,30 @@ namespace OrderManagementSystem.Application.Services
         {
             return _repository.GetAllCustomers();
         }
+        
+        
+        public Customer GetCustomerById(string id)
+        {
+            return _repository.GetCustomerById(id);
+        }
+        
 
-
+        // public Customer DeleteCustomer(string id)
+        // {
+        //     // Önce 'id' ile müşteriyi buluyoruz.
+        //     var customer = _repository.GetCustomerById(id);
+        //
+        //     if (customer == null)
+        //     {
+        //         throw new Exception("Customer not found");
+        //     }
+        //
+        //     // Ardından müşteriyi siliyoruz.
+        //     _repository.DeleteCustomer(customer);
+        //
+        //     return customer; // Silinen müşteriyi döndürmek mantıklı olabilir.
+        // }
+        //
+        
     }
 }

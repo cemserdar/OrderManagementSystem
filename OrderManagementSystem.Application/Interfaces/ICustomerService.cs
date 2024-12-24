@@ -10,5 +10,7 @@ namespace OrderManagementSystem.Application.Interfaces
     public interface ICustomerService
     {
         List<Customer> GetAllCustomers();
+        // Customer DeleteCustomer(string id);
+        Customer GetCustomerById(string id);
     }
 }

@@ -21,5 +21,10 @@ namespace OrderManagementSystem.Infrastructure.Repositories
         {
             return context.Categories.ToList();
         }
+
+        public Category GetCategoryById(int id)
+        {
+            return context.Categories.Find(id);
+        }
     }
 }

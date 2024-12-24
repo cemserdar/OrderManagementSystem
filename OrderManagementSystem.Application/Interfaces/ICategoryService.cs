@@ -10,5 +10,6 @@ namespace OrderManagementSystem.Application.Interfaces
     public interface ICategoryService
     {
       List<Category> GetAllCategories();
+      Category GetCategoryById(int id);
     }
 }

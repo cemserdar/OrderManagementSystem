@@ -22,6 +22,11 @@ namespace OrderManagementSystem.Application.Services
         { 
             return _repository.GetAllCategories();
         }
+
+        public Category GetCategoryById(int id)
+        {
+            return _repository.GetCategoryById(id);
+        }
     }
 }
 
