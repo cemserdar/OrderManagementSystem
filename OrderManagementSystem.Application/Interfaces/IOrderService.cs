@@ -10,5 +10,9 @@ namespace OrderManagementSystem.Application.Interfaces
     public interface IOrderService
     {
         List<Order> GetAllOrders();
+
+        List<Order> GetOrdersByCustomerId(string id);
     }
+    
+    
 }

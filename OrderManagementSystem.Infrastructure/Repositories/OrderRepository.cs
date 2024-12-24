@@ -22,5 +22,16 @@ namespace OrderManagementSystem.Infrastructure.Repositories
         {
             return appDbContext.Orders.ToList();
         }
+
+        public List<Order> GetOrdersByCustomerId(string id)
+        {
+            var customer = appDbContext.Customers.Find(id);
+            // var order = appDbContext.Orders.FirstOrDefault(c=>c.CustomerID == customer.CustomerID);
+            var orderList = appDbContext.Orders.Where(c => c.CustomerID == customer.CustomerID);
+            
+            return orderList.ToList();
+        }
+        
+        
     }
 }

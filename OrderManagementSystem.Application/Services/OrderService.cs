@@ -22,5 +22,10 @@ namespace OrderManagementSystem.Application.Services
         {
             return orderRepository.GetAllOrders();
         }
+
+        public List<Order> GetOrdersByCustomerId(string id)
+        {
+            return orderRepository.GetOrdersByCustomerId(id);
+        }
     }
 }

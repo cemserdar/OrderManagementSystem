@@ -21,5 +21,13 @@ namespace OrderManagementSystem.Presentation.Controllers
             var orders = _orderService.GetAllOrders();
             return Ok(orders);
         }
+
+        [HttpGet]
+        [Route("{id}")]
+        public IActionResult GetOrderById(string id)
+        {
+            var orderList = _orderService.GetOrdersByCustomerId(id);
+            return Ok(orderList);
+        }
     }
 }
