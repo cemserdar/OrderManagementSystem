@@ -18,9 +18,14 @@ namespace OrderManagementSystem.Application.Services
         {
             this._repository = repository;
         }
-        public List<OrderDetail> GetAllOrderDetails()
+        public List<OrderDetails> GetAllOrderDetails()
         {
             return _repository.GetOrderDetails();
+        }
+
+        public List<OrderDetails> GetOrderDetailsByOrderId(int id)
+        {
+            return _repository.GetOrderDetailsByOrderId(id);
         }
     }
 }

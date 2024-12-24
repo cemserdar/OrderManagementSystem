@@ -5,12 +5,12 @@ namespace OrderManagementSystem.Presentation.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class OrderDetailController : ControllerBase
+    public class OrderDetailsController : ControllerBase
     {
 
         private readonly IOrderDetailService _orderDetailService;
 
-        public OrderDetailController(IOrderDetailService orderDetailService)
+        public OrderDetailsController(IOrderDetailService orderDetailService)
         {
             _orderDetailService = orderDetailService;
         }
@@ -20,7 +20,13 @@ namespace OrderManagementSystem.Presentation.Controllers
             var orderDetails = _orderDetailService.GetAllOrderDetails();
             return Ok(orderDetails);
         }
-
+        [HttpGet]
+        [Route("id")]
+        public IActionResult GetOrderDetailsByOrderId(int id)
+        {
+            var orderDetailsById = _orderDetailService.GetOrderDetailsByOrderId(id);
+            return Ok(orderDetailsById);
+        }
 
     }
 }

@@ -2,13 +2,12 @@
 
 namespace OrderManagementSystem.Domain.Models
 {
-    public class OrderDetail
+    public class OrderDetails
     {
-        [Key]
-        public int OrderID { get; set; } // Composite Primary Key, Foreign Key
-        public int ProductID { get; set; } // Composite Primary Key, Foreign Key
+        public int OrderID { get; set; } 
+        public int ProductID { get; set; } 
 
-        public int Quantity { get; set; }
+        public short Quantity { get; set; }
         public decimal UnitPrice { get; set; }
 
         // Navigation Properties

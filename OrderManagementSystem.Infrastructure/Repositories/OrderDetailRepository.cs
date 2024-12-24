@@ -16,9 +16,16 @@ namespace OrderManagementSystem.Infrastructure.Repositories
         {
             _context = context;
         }
-        public List<OrderDetail> GetOrderDetails()
+        public List<OrderDetails> GetOrderDetails()
         {
             return _context.OrderDetails.ToList();
+        }
+
+        public List<OrderDetails> GetOrderDetailsByOrderId(int id)
+        {
+            var order = _context.Orders.FirstOrDefault(x=>x.OrderID==id);
+            var orderDetails = _context.OrderDetails.Where(x=>x.OrderID == order.OrderID).ToList();
+            return orderDetails.ToList();
         }
     }
 }

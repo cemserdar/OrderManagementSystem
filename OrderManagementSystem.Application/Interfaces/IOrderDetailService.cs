@@ -9,6 +9,8 @@ namespace OrderManagementSystem.Application.Interfaces
 {
     public interface IOrderDetailService
     {
-        List<OrderDetail> GetAllOrderDetails();
+        List<OrderDetails> GetAllOrderDetails();
+        
+        List<OrderDetails> GetOrderDetailsByOrderId(int id);
     }
 }

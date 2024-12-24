@@ -10,7 +10,8 @@
 
         // Navigation Properties
         public Customer Customer { get; set; }
-        public ICollection<OrderDetail> OrderDetails { get; set; }
+        public ICollection<OrderDetails> OrderDetails { get; set; }
+        
     }
 
 }
